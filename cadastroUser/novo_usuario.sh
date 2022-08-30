@@ -5,7 +5,7 @@ if [ `cut -d ':' -f1 /etc/passwd | grep -w $USUARIO`  ]; then
 	echo 'Usuario ja cadastrado'
 else
 	if [ `cut -d ':' -f1 /etc/group | grep -w $GRUPO` ];then
-		adduser --disabled-password --home /home/$GRUPO/$USUARIO $USUARIO
+		adduser --disabled-password --gecos" " --home /home/$GRUPO/$USUARIO $USUARIO
 		passwd -e $USUARIO
 		adduser $USUARIO $GRUPO 
 		cp /home/anderson/Documentos/regras.txt /home/$GRUPO/$USUARIO
