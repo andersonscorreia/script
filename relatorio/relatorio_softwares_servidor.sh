@@ -28,8 +28,8 @@ echo "$nome,$versao_instalada,$versao_repositorio,$secao,$prioridade,$atualizar"
 
 done
 
-
-`tar -czf` /var/backups/relatorios/`date +%Y/%m/softwares-%Y%m%d.tar.gz` relatorio.csv
+mkdir -p /var/backups/relatorios/`date +%Y/%m/
+tar -czf /var/backups/relatorios/`date +%Y/%m/softwares-%Y%m%d.tar.gz` relatorio.csv
 
 
 
