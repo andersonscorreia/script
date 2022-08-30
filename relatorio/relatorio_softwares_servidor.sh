@@ -7,7 +7,7 @@ echo "Pacote, Versão atual, Versão repositório, Seção, Prioridade, Necessit
 unset "a[0]"
 unset "a[1]"
 unset "a[2]"
-f=0
+
 for nome in "${a[@]}"
 do
 	
@@ -23,9 +23,9 @@ do
 	
 
 echo "$nome,$versao_instalada,$versao_repositorio,$secao,$prioridade,$atualizar" >> teste.csv
-echo $f
 
-f=$((1+$f))
+
+
 done
 
 
