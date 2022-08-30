@@ -1,9 +1,9 @@
 #!/bin/bash 
 apt update 
 a=(`dpkg -l | cut -d " " -f3`)
-echo "Relatório Gerencial de Softwares do Servidor debian-isa">> teste.csv
-echo "`date +"%d de %h de %Y"`">> teste.csv
-echo "Pacote, Versão atual, Versão repositório, Seção, Prioridade, Necessita atualizar?" >> teste.csv
+echo "Relatório Gerencial de Softwares do Servidor debian-isa" >> relatorio.csv
+echo "`date +"%d de %h de %Y"`" >> relatorio.csv
+echo "Pacote, Versão atual, Versão repositório, Seção, Prioridade, Necessita atualizar?" >> relatorio.csv
 unset "a[0]"
 unset "a[1]"
 unset "a[2]"
@@ -22,14 +22,14 @@ do
 	fi
 	
 
-echo "$nome,$versao_instalada,$versao_repositorio,$secao,$prioridade,$atualizar" >> teste.csv
+echo "$nome,$versao_instalada,$versao_repositorio,$secao,$prioridade,$atualizar" >> relatorio.csv
 
 
 
 done
 
 
-tar -cf `date +"%Y"/"%m"/`/`date +"softwares-%Y%m%d.tar.gz"` teste.csv
+tar -cf /var/backups/relatorios/date +"%Y/%m/softwares-%Y%m%d.tar.gz"  relatorio.csv
 
 
 
