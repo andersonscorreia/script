@@ -11,10 +11,10 @@ f=0
 for nome in "${a[@]}"
 do
 	
-	versao_instalada=`apt list --installed | grep -w $nome|cut -d " " -f2 | head -n 1 ` 
-	versao_repositorio=`apt-cache show $nome | grep Version | cut -d ":" -f2| head -n 1 `
-	secao=`apt-cache show $nome | grep Section | cut -d ":" -f2 | head -n 1 `
-	prioridade=`apt-cache show $nome | grep Priority | cut -d ":" -f2 | head -n 1 `
+	versao_instalada=`dpkg -l $nome | grep $nome | awk {'print $3'} ` 
+	versao_repositorio=`apt-cache show $nome | grep Version | awk {'print $2'}| head -n 1 `
+	secao=`apt-cache show $nome | grep Section | awk {'print $2'} | head -n 1 `
+	prioridade=`apt-cache show $nome | grep Priority | awk {'print $2'} | head -n 1 `
 	if [ $versao_instalada = $versao_repositorio ]; then
 		atualizar="Não"
 	else
