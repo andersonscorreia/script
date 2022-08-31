@@ -1,4 +1,7 @@
 #!/bin/bash 
+
+#agendamento 'crontab -e 45 03 * * 1,4,5 ../relatorio_softwares_servidor.sh
+
 apt update 
 a=(`dpkg -l | cut -d " " -f3`)
 echo "Relatório Gerencial de Softwares do Servidor debian-isa" >> relatorio.csv
