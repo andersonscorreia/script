@@ -1,6 +1,8 @@
 #!/bin/bash 
 
-#agendamento 'crontab -e 45 03 * * 1,4,5 ../relatorio_softwares_servidor.sh
+#agendamento 
+#'crontab -e' 
+#45 03 * * 1,4,5 ../relatorio_softwares_servidor.sh
 
 apt update 
 a=(`dpkg -l | cut -d " " -f3`)
@@ -33,6 +35,6 @@ done
 
 mkdir -p /var/backups/relatorios/`date +"%Y/%m/"`
 tar -czf /var/backups/relatorios/`date "+%Y/%m/softwares-%Y%m%d.tar.gz"` relatorio.csv
-
+#scp -p 22 usuario@A.B.C.D : /var/backups/relatorios/`date "+%Y/%m/softwares-%Y%m%d.tar.gz"` /tmp/backups
 
 
