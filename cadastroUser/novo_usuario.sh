@@ -31,7 +31,7 @@ if [ $LEN -eq 2 ]; then
 		elif [ $TIPO -eq 'tecnico' ]; then
 			GRUPO = 'tecnicos'
 			cadastro($USUARIO,$GRUPO)
-		else:
+		else
 			echo 'Tipo de usuario não pode ser cadastrado'
 			
 		fi
