@@ -30,7 +30,7 @@ done
 
 mkdir -p /var/backups/relatorios/`date +"%Y/%m/"`
 tar -czf /var/backups/relatorios/`date "+%Y/%m/softwares-%Y%m%d.tar.gz"` relatorio.csv
-rm  relatorio.csv
+#rm  relatorio.csv
 #agendamento 
 #'crontab -e' 
 #45 03 * * 1,4,5 ../relatorio_softwares_servidor.sh
