@@ -1,11 +1,27 @@
 #!/bin/bash
 USUARIO=$2
-GRUPO=$1
+TIPO=$1
 LEN=$#
+
+
 if [ $LEN -eq 2 ]; then
 	if [ `cut -d ':' -f1 /etc/passwd | grep -w $USUARIO`  ]; then
 		echo 'Usuario ja cadastrado'
 	else
+
+
+		if [ $TIPO = 'professor']; then
+			GRUPO = 'professores'
+		elif [ $TIPO = 'aluno' ]; then
+			GRUPO = 'alunos'
+		elif [ $TIPO = 'tecnico' ]; then
+			GRUPO = 'tecnicos' 
+		else:
+			echo 'Tipo de usuario não pode ser cadastrado'
+			break
+		fi
+		
+		
 		if [ `cut -d ':' -f1 /etc/group | grep -w $GRUPO` ];then
 			adduser --disabled-password --gecos GECOS --home /home/$GRUPO/$USUARIO $USUARIO
 			passwd -d $USUARIO
