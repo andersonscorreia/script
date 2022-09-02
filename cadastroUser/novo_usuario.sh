@@ -13,7 +13,7 @@ if [ $LEN -eq 2 ]; then
 			passwd -e $USUARIO
 			adduser $USUARIO $GRUPO 
 			cp regras.txt /home/$GRUPO/$USUARIO
-			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $GRUPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
+			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $TIPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
 			echo 'usuario criado'
 		elif [ $TIPO = 'aluno' ]; then
 			GRUPO='alunos'
@@ -22,7 +22,7 @@ if [ $LEN -eq 2 ]; then
 			passwd -e $USUARIO
 			adduser $USUARIO $GRUPO 
 			cp regras.txt /home/$GRUPO/$USUARIO
-			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $GRUPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
+			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $TIPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
 			echo 'usuario criado'				
 		elif [ $TIPO = 'tecnico' ]; then
 			GRUPO = 'tecnicos'
@@ -31,7 +31,7 @@ if [ $LEN -eq 2 ]; then
 			passwd -e $USUARIO
 			adduser $USUARIO $GRUPO 
 			cp regras.txt /home/$GRUPO/$USUARIO
-			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $GRUPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
+			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $TIPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
 			echo 'usuario criado'
 		else
 			echo 'Tipo de usuario não pode ser cadastrado'
