@@ -6,7 +6,7 @@ if [ $LEN -eq 2 ]; then
 	if [ `cut -d ':' -f1 /etc/passwd | grep -w $USUARIO`  ]; then
 		echo 'Usuario ja cadastrado'
 	else
-		if [ $TIPO -eq 'professor']; then
+		if [ $TIPO = 'professor' ]; then
 			GRUPO='professores'			
 			adduser --disabled-password --gecos GECOS --home /home/$GRUPO/$USUARIO $USUARIO
 			passwd -d $USUARIO
@@ -15,7 +15,7 @@ if [ $LEN -eq 2 ]; then
 			cp regras.txt /home/$GRUPO/$USUARIO
 			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $GRUPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
 			echo 'usuario criado'
-		elif [ $TIPO -eq 'aluno' ]; then
+		elif [ $TIPO = 'aluno' ]; then
 			GRUPO='alunos'
 			adduser --disabled-password --gecos GECOS --home /home/$GRUPO/$USUARIO $USUARIO
 			passwd -d $USUARIO
@@ -24,7 +24,7 @@ if [ $LEN -eq 2 ]; then
 			cp regras.txt /home/$GRUPO/$USUARIO
 			echo -e " Olá $USUARIO, seja bem-vindo(a) à EMPRESA X. \n Seu cargo na instituição é de: $GRUPO \n A ativação do seu cadastro foi realizada em: `date +"%d de %h de %Y às %H:%M:%S"` \n Bom trabalho!" >> /home/$GRUPO/$USUARIO/welcome_$USUARIO.txt	
 			echo 'usuario criado'				
-		elif [ $TIPO -eq 'tecnico' ]; then
+		elif [ $TIPO = 'tecnico' ]; then
 			GRUPO = 'tecnicos'
 			adduser --disabled-password --gecos GECOS --home /home/$GRUPO/$USUARIO $USUARIO
 			passwd -d $USUARIO
